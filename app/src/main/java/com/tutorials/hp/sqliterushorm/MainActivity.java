@@ -1,5 +1,8 @@
 package com.tutorials.hp.sqliterushorm;
 
+/*
+- IMPORTS
+ */
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -10,15 +13,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-
 import com.tutorials.hp.sqliterushorm.mDB.Spacecraft;
 import com.tutorials.hp.sqliterushorm.mListView.CustomAdapter;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import co.uk.rushorm.core.RushSearch;
 
+/*
+
+MAIN ACTIVITY CLASS
+Methods: onCreate(),displayDialog(),onContextItemSelected()
+1. Our MainActivity.Launcher Activity.
+2. Inflates ContentMain.xml to show our ListView with sqlite data.
+3. Displays our material input dialog when FAB button is clicked.
+
+ */
 public class MainActivity extends AppCompatActivity {
 
     ListView lv;
@@ -49,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /*
+    - Display Input Dialog.
+    - We can show dialog either for insert or update, so we pass a boolean to identify why we are showing it.
+     */
     private void displayDialog(Boolean forUpdate)
     {
         Dialog d=new Dialog(this);
@@ -84,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             nameEditText.setText(adapter.getSelectedSpacecraft().getName());
             propellantEditTxt.setText(adapter.getSelectedSpacecraft().getPropellant());
 
-
+            //UPDATE SQLITE DATA USING RUSHORM.
             saveBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -105,10 +118,16 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
+        //SHOW OUR DIALOG.
         d.show();
 
     }
 
+    /*
+    - Retrieve SQLite data using the RushSearch().find() method.
+    - This returns a list of spacecrafts.
+    - We then bind it to our listview.
+     */
     private void retrieve()
     {
         List<Spacecraft> spacecrafts=new RushSearch().find(Spacecraft.class);
@@ -119,6 +138,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    /*
+    - Save Spacecraft to sqlite database by calling save() method.
+     */
     private void save(Spacecraft s)
     {
         s.setName(nameEditText.getText().toString());
@@ -128,6 +151,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /*
+    - We will be showing a cntextmenu when listview item is clicked.
+    - Hence we override the onContextItemSelected() method, passing in a menuitem.
+    - We then identify the clicked contextmenu item, be it new, edit or delete.
+     */
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         CharSequence title=item.getTitle();

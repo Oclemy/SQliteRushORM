@@ -1,5 +1,15 @@
 apply plugin: 'com.android.application'
 
+/*
+- Our app level build.gradle file.
+- We specify compilesdk,minimum sdk,target sdk and dependencies.
+- Note that the minimum sdk for this project isn't that strict,it is much lower than that specified below.
+- We also add dependencies using 'compile' statement.
+- Our activity shall derive from the appCompatActivity to make it target earlier android versions.
+- We also specify design support library as well as CardView.
+- Finally we add the RushORM dependency, which is a third party library. We'll use it for sqlite database as it abstracts away sql statements.
+ */
+
 android {
     compileSdkVersion 24
     buildToolsVersion "25.0.1"

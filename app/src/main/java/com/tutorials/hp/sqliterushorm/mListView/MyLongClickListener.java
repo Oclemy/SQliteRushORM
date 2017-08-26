@@ -1,10 +1,15 @@
 package com.tutorials.hp.sqliterushorm.mListView;
 
 /**
- * Created by Oclemmy on 5/5/2016 for ProgrammingWizards Channel and http://www.Camposha.com.
+ * Created by Oclemmy for ProgrammingWizards Channel and http://www.Camposha.info.
+ - MyLongClickListener interface.
+ - Defines onItemLongClick() signature.
  */
 public interface MyLongClickListener {
 
+    /*
+    Abstract method
+     */
     void onItemLongClick();
 
 }

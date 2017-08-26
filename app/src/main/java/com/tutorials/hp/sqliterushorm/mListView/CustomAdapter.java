@@ -6,15 +6,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Toast;
-
 import com.tutorials.hp.sqliterushorm.R;
 import com.tutorials.hp.sqliterushorm.mDB.Spacecraft;
-
 import java.util.List;
 
 
 /**
- * Created by Oclemmy on 5/5/2016 for ProgrammingWizards Channel and http://www.Camposha.com.
+ * Created by Oclemmy for ProgrammingWizards TV Channel and http://www.camposha.info.
+ - Our adapter class.
+ - Derives from android.widget.BaseAdapter.
+ - Here we: inflate our model xml layout to viewitems and recycle it, bind data to these viewitems.
+ - The data we bind is passed to us via constructor.
+ - Apart from the data being passed us, we are also passed a Context object that will help us getSystemService that we  need for our
+ inflation of model layout.
+ - Being that we derive from BaseAdapter, we override getCount() which returns total count of our data, getItem() which returns each
+ data object,getItemId() which returns the object's id, and getView() to return us its view()
  */
 public class CustomAdapter extends BaseAdapter {
 
@@ -23,6 +29,9 @@ public class CustomAdapter extends BaseAdapter {
     LayoutInflater inflater;
     Spacecraft spacecraft;
 
+    /*
+    Constructor
+     */
     public CustomAdapter(Context c, List<Spacecraft> spacecrafts) {
         this.c = c;
         this.spacecrafts = spacecrafts;
@@ -43,8 +52,12 @@ public class CustomAdapter extends BaseAdapter {
         return position;
     }
 
+    /*
+    Return inflated view object.
+     */
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
+        //INFLATE VIEW
         if(inflater==null)
         {
             inflater= (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -76,7 +89,9 @@ public class CustomAdapter extends BaseAdapter {
         return convertView;
     }
 
-
+    /*
+    Spacecraft selected
+     */
     public Spacecraft getSelectedSpacecraft()
     {
         return spacecraft;

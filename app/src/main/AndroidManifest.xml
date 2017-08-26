@@ -16,11 +16,14 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<!--META DATAS FOR OUR DATABASE-->
+        <!--
+        - We are using SQLite database with RushORM.
+        - Hence we use AndroidManifest.xml to define the meta data for our sqlite database.
+        - These include database name, database class package(where our database model belongs), database version etc.
+        -->
         <!--THIS FIRST LINE IS COMPULSORY.ADD YOUR DATABASE PACKAGE-->
         <meta-data android:name="Rush_classes_package" android:value="com.tutorials.hp.sqliterushorm.mDB" />
         <!-- Updating this will cause a database upgrade -->

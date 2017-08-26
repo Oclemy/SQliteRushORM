@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+    -  ContentMain.xml file.
+    -  Shall get inflated to MainActivity
+    -  Root tag is relativeLayout.
+    -  Contains ListView.
+    -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,7 +17,7 @@
     tools:context="com.tutorials.hp.sqliterushorm.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <ListView
+       <ListView
         android:id="@+id/lv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

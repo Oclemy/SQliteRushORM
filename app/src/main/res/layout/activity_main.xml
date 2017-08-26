@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+- ActivityMain.xml.
+- This is a template layout for our MainActivity.
+- Root layout tag is CoordinatorLayout.
+- Inside our CordinatorLayout we add : AppBarLayout,FloatingActionButton and include content_main.xml.
+- Inside the AppBarLayout we add our toolbar,which we give a blue color.
+- We will add our widgets in our content_main.xml, not here as this is a template layout.
+-->
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
