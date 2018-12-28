@@ -17,7 +17,7 @@ like this.
 
 |No.|Location|Link|
 |---|--------|---------|
-|1.|Camposha|[View Full Tutorial](https://camposha.info/kotlin-android/listview-sort)|
+|1.|Camposha|[View Full Tutorial](https://camposha.info/android/sqlite/rushorm)|
 |2.|YouTube |[Watch Video Tutorial](https://www.youtube.com/watch?v=O3OsH_Hpt1w) |
 |3.|YouTube |[Subscribe to ProgrammingWizards TV Channel](https://www.youtube.com/c/programmingwizards) |
 |4.|Camposha|[View All RushORM Tutorials](https://camposha.info/android/sqlite/rushorm)|
